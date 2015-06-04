@@ -1587,6 +1587,8 @@ Controls what happens to the associated objects when their owner is destroyed:
 * `:restrict_with_exception` causes an exception to be raised if there are any associated records
 * `:restrict_with_error` causes an error to be added to the owner if there are any associated objects
 
+WARNING: If using with the `:through` option, the association on the join model must be a `belongs_to`, and the records which get deleted are the join records, rather than the associated records.
+
 ##### `:foreign_key`
 
 By convention, Rails assumes that the column used to hold the foreign key on the other model is the name of this model with the suffix `_id` added. The `:foreign_key` option lets you set the name of the foreign key directly:
